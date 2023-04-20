@@ -1,0 +1,200 @@
+:root{
+    --game-table-size: 500px; 
+    --player-motif-size: 40px;
+    --motif-size: 75px;
+    --game-header-padding: 0 70px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Code';
+}
+
+
+body{
+    background-color: transparent;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.game_header{
+    height: 80px;
+    width: 100%;
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    box-shadow: 0 2px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+@media screen  and (max-width: 810px){
+    .game_header{
+        font-size: 0.85em;
+    }
+
+}
+
+.player1, .player2{
+    padding: var(--game-header-padding);
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.player1{
+    justify-content: flex-start;
+}
+
+.player2{
+    justify-content: flex-end;
+}
+
+
+.motif_player1, .motif_player2{
+    width: var(--player-motif-size);
+    height: var(--player-motif-size);
+}
+
+.motif1, .motif2{
+    width: var(--motif-size);
+    height: var(--motif-size);
+}
+
+@media screen and (max-width: 810px){
+    :root{
+        --player-motif-size: 30px;
+        --game-header-padding: 0 40px;
+    }
+}
+.motif_player1, .motif1{
+    border-radius: 100%;
+    border: 3px solid red;
+}
+
+.motif_player2, .motif2{
+    position: relative;
+
+}
+
+.motif_player2::before, .motif_player2::after, .motif2::before, .motif2::after{
+    position: absolute;
+    content: '';
+    left: 50%;
+    width: 3px;
+    height: inherit;
+    background-color: #012950;
+}
+
+.motif_player2::before, .motif2::before{
+    transform: rotate(45deg);
+}
+.motif_player2::after, .motif2::after{
+    transform: rotate(-45deg);
+}
+
+
+.game_content{
+    width: 100%;
+    height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game_content .game_table{
+    width: var(--game-table-size);
+    height: var(--game-table-size);
+    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.game_table table{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: transparent;
+}
+
+.line1,
+.line2, 
+.line3{
+    position: relative;
+    width: 100%;
+    height: calc(100% / 3);
+    display: flex;
+    align-items: center;
+    background: transparent;
+}
+
+.case{
+    width: calc(100% / 3);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.grille{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--game-table-size);
+    height: var(--game-table-size);
+}
+
+.grille .verticale, .grille .verticale1{
+    position: absolute;
+    width: 100%;
+    height: calc(100% /3);
+    border-bottom: 3px solid rgb(1, 15, 32);
+    z-index: 5;
+}
+.grille .verticale1{
+    top: calc(var(--game-table-size) / 3);
+   
+}
+
+.grille .horizontale, .grille .horizontale1{
+    position: absolute;
+    height: 100%;
+    width: calc(100% / 3);
+    border-right: 3px solid rgb(1, 15, 32);
+    z-index: 5;
+}
+
+.grille .horizontale1{
+    left: calc(var(--game-table-size) /3)
+}
+
+
+@media screen and (max-width: 480px) {
+    :root{
+        --game-table-size: 250px;
+        --player-motif-size: 25px;
+        --motif-size: 40px;
+        --game-header-padding: 0 20px;
+
+    }
+
+    .player1, .player2{
+        width: 50%;
+    }
+}
