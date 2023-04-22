@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Code';
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.container h1{
+    position: relative;
+    margin-bottom: 10px;
+    font-size: 24px;
+    overflow: hidden;
+    
+}
+
+
+.container h1 span{
+    display: block;
+    animation: push-up 0.5s ease-in-out;
+}
+
+
+@keyframes push-up {
+    0%{
+        transform: translateY(50px);
+    }
+
+    100%{
+        transform: translateY(0);
+    }
+}
+
+
+
+@keyframes push-up-start {
+    0%{
+        transform: translateY(70px);
+    }
+
+
+    100%{
+        transform: translateY(0);
+    }
+}
+
+
+
+.container h3{
+    display: flex;
+    gap: 15px;
+    font-size: 40px;
+    overflow: hidden;
+}
+
+.container h3 span{
+    animation: push-up-start 0.7s ease-in-out;
+}
+
+.container h3 span:nth-child(1){
+    color: rgb(252, 25, 25);
+}
+
+
+.container h3 span:nth-child(2){
+    color: rgb(1, 194, 1);
+}
+
+
+.container h3 span:nth-child(3){
+    color: rgb(233, 198, 0);
+}
+
+.container a{
+    width: 150px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(62, 65, 231);
+    text-decoration: none;
+    color: white;
+    border-radius: 3px;
+    margin-top: 20px;
+    box-shadow: 1px 1px 15px aliceblue;
+    font-size: 0.85em;
+}

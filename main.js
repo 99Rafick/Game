@@ -26,8 +26,8 @@ let validation = (tab1, tab2) => {
 
     for(let k = 0; k < tab1.length; k++){
 
-
         for(let i = 0; i < tab2.length; i++){
+
             if(tab1[k] == tab2[i]){
                 ok.push('ok')
             }
@@ -57,9 +57,9 @@ function initialisation (gagnant) {
     }else {
         couleur = ['red']
     }
+
     player1 = []
     player2 = []
-
 
 }
     
@@ -74,14 +74,12 @@ grille.forEach((el, k) => {
 
     el.addEventListener('click', () => {
 
-    
-
         if(el.classList.contains('take')) return;
         
         let l = couleur.length - 1
         let motif = document.createElement('div')
 
-        if(couleur[l] ==  'red'){
+        if(couleur[l] == 'red'){
             
             motif.setAttribute('class', 'motif1')
             el.classList.add('take')
@@ -90,7 +88,12 @@ grille.forEach((el, k) => {
             player1.push(k)
 
             combinaison_gagnantes.forEach(el => {
+
+
                 if(validation(el, player1)) {
+
+
+                    //c'est là ou j'incrémente le scole
                     let score1 = parseInt(scorePlayer1.textContent);
                     score1 = score1 + 1;
                     scorePlayer1.textContent = score1;
@@ -98,8 +101,6 @@ grille.forEach((el, k) => {
 
                     initialisation(winner);
 
-                   
-                    
                 }
             })
 
@@ -123,7 +124,6 @@ grille.forEach((el, k) => {
                     winner = false;
 
                     initialisation();
-                
                 }
             })
 
