@@ -51,7 +51,7 @@ body.blur::before{
 .game_header{
     height: 80px;
     width: 100%;
-    background-color: aliceblue;
+    background-color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -229,7 +229,7 @@ body.blur::before{
 
 @media screen and (max-width: 480px) {
     :root{
-        --game-table-size: 250px;
+        --game-table-size: 320px;
         --player-motif-size: 25px;
         --motif-size: 40px;
         --game-header-padding: 0 20px;
