@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jeu</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="TicTaaToo.js" defer></script>
 </head>
 <body>
     
@@ -15,7 +14,7 @@
                 <div class="motif_player1">
 
                 </div>
-                <span>Rouge: <span class="score_player1">0</span></span>
+                <span><span id="gamer1place">Rouge</span>: <span class="score_player1">0</span></span>
                 
             </div>
 
@@ -23,10 +22,9 @@
                 <div class="motif_player2">
 
                 </div>
-                <span>Noir : <span class="score_player2">0</span></span>
+                <span><span id="gamer2place">Noir</span>: <span class="score_player2">0</span></span>
             </div>
         </div>
-
         <div class="game_content">
 
             <div class="game_table">
@@ -71,23 +69,27 @@
             </div>
 
         </div>
+        <div class="button">
+            <button>Restart</button>
+        </div>
+    </div>
 
+    <div class="modal">
+        <h1><span>Rafick Game</span></h1>
+        <h3><span>Tic</span><span>Tac</span><span>Too</span></h3>
+        <p>Bienvenur sur le petit Jeu TicTaaToo que j'ai créé. <br> Ce mode est celui qui se joue à deux. <br> Veuillez y prendre du plaisir.
+            <br> <span>Merci beaucoup </span>😏👌
+        </p>
+
+        <div class="fields">
+            <input id="gamer1" type="text" placeholder="Nom Joueur 1">
+            <input id="gamer2" type="text" placeholder="Nom Joueur 2">
+        </div>
+        <button class="start" >Commencer</button>
     </div>
 
 </body>
 
 <script src="TicTaaToo.js"></script>
-<script>
-    const grille = document.querySelectorAll('.case')
-    const scorePlayer1 = document.querySelector('.score_player1')
-    const scorePlayer2 = document.querySelector('.score_player2')
-    const circle = 'motif1'
-    const croix = 'motif2'
-
-    let TicTacTooGame = new TicTacToo(grille, scorePlayer1, scorePlayer2)
-    TicTacTooGame.setGame(croix, circle);
-
-
-
-</script>
+<script src="app.js"></script>
 </html>

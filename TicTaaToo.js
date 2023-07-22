@@ -19,6 +19,7 @@ class TicTacToo
         this.color = [];
         this.player1 = []
         this.player2 = []
+        this.stop = false
     }
 
     setGame(circle, croix)
@@ -26,7 +27,8 @@ class TicTacToo
         this.color = [circle]
         this.grille.forEach((el, k) => {
             el.addEventListener('click', () => {
-                if (el.classList.contains('take')) return;
+
+                if (el.classList.contains('take') || this.stop) return;
 
                 if (this.color[this.color.length - 1] === circle) {
                     this.insertMotif(circle, el)
@@ -35,6 +37,7 @@ class TicTacToo
                         if (this.validation(el, this.player1)) {
                             this.Animation(true, el)
                             this.incrementScore(this.scorePlayer1);
+                            this.pauseParty()
                         }
                     })
 
@@ -45,12 +48,15 @@ class TicTacToo
                         if (this.validation(el, this.player2)) {
                             this.Animation(false, el)
                             this.incrementScore(this.scorePlayer2)
+                            this.pauseParty()
                         }
                     })
 
                 }
-                if(this.player2.length > 4 || this.player1.length > 4){
-                    this.initialisation();
+                if (this.player2.length > 4 || this.player1.length > 4) {
+                    setTimeout(() => {
+                        this.initialisation();
+                    }, 1000)
                 }
             })
         })
@@ -110,7 +116,6 @@ class TicTacToo
         })
     }
 
-
     incrementScore(scorePlayer)
     {
         let score = parseInt(scorePlayer.textContent);
@@ -132,13 +137,21 @@ class TicTacToo
         })
 
         if(winner) {
-            this.color = [croix]
-        }else {
             this.color = [circle]
+        }else {
+            this.color = [croix]
         }
 
         this.player1 = []
         this.player2 = []
+    }
+
+    pauseParty ()
+    {
+        this.stop = true
+        setTimeout(() => {
+            this.stop = false
+        }, 1000)
     }
 
 
