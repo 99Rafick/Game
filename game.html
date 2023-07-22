@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jeu</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="main.js" defer></script>
+    <script src="TicTaaToo.js" defer></script>
 </head>
 <body>
     
     <div class="container">
-
         <div class="game_header">
             <div class="player1">
                 <div class="motif_player1">
@@ -27,7 +26,6 @@
                 <span>Noir : <span class="score_player2">0</span></span>
             </div>
         </div>
-
 
         <div class="game_content">
 
@@ -67,6 +65,7 @@
 
                         </div>
                     </div>
+
                 </table>
 
             </div>
@@ -76,4 +75,19 @@
     </div>
 
 </body>
+
+<script src="TicTaaToo.js"></script>
+<script>
+    const grille = document.querySelectorAll('.case')
+    const scorePlayer1 = document.querySelector('.score_player1')
+    const scorePlayer2 = document.querySelector('.score_player2')
+    const circle = 'motif1'
+    const croix = 'motif2'
+
+    let TicTacTooGame = new TicTacToo(grille, scorePlayer1, scorePlayer2)
+    TicTacTooGame.setGame(croix, circle);
+
+
+
+</script>
 </html>

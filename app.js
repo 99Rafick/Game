@@ -41,8 +41,8 @@ let validation = (tab1, tab2) => {
 function initialisation (gagnant) {
 
     grille.forEach(el => {
-        let div = el.firstChild;
 
+        let div = el.firstChild;
         if(div != null){
             el.removeChild(div)
         }
@@ -71,7 +71,6 @@ let player2 = []
 
 grille.forEach((el, k) => {
 
-
     el.addEventListener('click', () => {
 
         if(el.classList.contains('take')) return;
@@ -79,7 +78,7 @@ grille.forEach((el, k) => {
         let l = couleur.length - 1
         let motif = document.createElement('div')
 
-        if(couleur[l] == 'red'){
+        if (couleur[l] === 'red') {
             
             motif.setAttribute('class', 'motif1')
             el.classList.add('take')
@@ -89,17 +88,22 @@ grille.forEach((el, k) => {
 
             combinaison_gagnantes.forEach(el => {
 
-
                 if(validation(el, player1)) {
 
-
-                    //c'est là ou j'incrémente le scole
                     let score1 = parseInt(scorePlayer1.textContent);
+
+                    setTimeout(function () {
+                        winner = true;
+                        initialisation(winner);
+                    }, 3000)
+                    //c'est là ou j'incrémente le score
+
                     score1 = score1 + 1;
                     scorePlayer1.textContent = score1;
-                    winner = true;
 
-                    initialisation(winner);
+
+
+
 
                 }
             })
@@ -109,7 +113,8 @@ grille.forEach((el, k) => {
             }
             
 
-        }else {
+        } else {
+
             motif.setAttribute('class', 'motif2')
             el.classList.add('take')
             couleur.push('red')
@@ -123,7 +128,9 @@ grille.forEach((el, k) => {
                     scorePlayer2.textContent = score2;
                     winner = false;
 
-                    initialisation();
+                    setTimeout(function () { //initialisation();
+                    }, 3000)
+
                 }
             })
 

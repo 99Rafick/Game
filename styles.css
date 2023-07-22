@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
 
 :root{
-    --game-table-size: 500px; 
+    --game-table-size: 500px;
     --player-motif-size: 40px;
     --motif-size: 75px;
     --game-header-padding: 0 70px;
@@ -73,8 +73,11 @@ body{
 
 .motif1, .motif2{
     width: var(--motif-size);
-    height: var(--motif-size);
+    height: var(--motif-size)
 }
+
+
+
 
 @media screen and (max-width: 810px){
     :root{
@@ -134,7 +137,7 @@ body{
 }
 
 .line1,
-.line2, 
+.line2,
 .line3{
     position: relative;
     width: 100%;
@@ -154,6 +157,25 @@ body{
     z-index: 10;
 }
 
+.case > div {
+    transition: 0.3s;
+}
+
+
+.case.animate div {
+    animation: animate 0.3s ease-out;
+}
+
+@keyframes animate {
+    0%, 100%{
+        transform: scale(0);
+    }
+
+    50% {
+        transform: scale(1.20);
+    }
+}
+
 .grille{
     position: absolute;
     top: 0;
@@ -171,7 +193,7 @@ body{
 }
 .grille .verticale1{
     top: calc(var(--game-table-size) / 3);
-   
+
 }
 
 .grille .horizontale, .grille .horizontale1{
