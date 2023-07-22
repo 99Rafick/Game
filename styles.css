@@ -231,7 +231,7 @@ body.blur::before{
     :root{
         --game-table-size: 320px;
         --player-motif-size: 25px;
-        --motif-size: 70px;
+        --motif-size: 60px;
         --game-header-padding: 0 20px;
 
     }
