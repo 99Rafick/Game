@@ -271,8 +271,8 @@ body.blur::before{
     top: 20%;
     left: 50%;
     transform:  translateX(-50%) translateY(-220%);
-    width: 75vw;
-    height: 500px;
+    width: 85vw;
+    height: 550px;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     overflow: hidden;
@@ -285,6 +285,7 @@ body.blur::before{
     align-items: center;
     flex-direction: column;
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 .modal.appear{
