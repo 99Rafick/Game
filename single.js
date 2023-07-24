@@ -7,10 +7,8 @@ const croix = 'motif2'
 const button = document.querySelector('.button button')
 const modal = document.querySelector('.modal')
 const startButton = document.querySelector('.modal .start')
-const gamer1Name = document.querySelector('input#gamer1')
-const gamer2Name = document.querySelector('input#gamer2')
-const gamer1Place = document.querySelector('span#gamer1place')
-const gamer2Place = document.querySelector('span#gamer2place')
+const gamerName = document.querySelector('input#gamer')
+const gamerPlace = document.querySelector('span#gamerplace')
 const modalActive = 'appear'
 const bodyShadowEffect = 'blur'
 
@@ -20,13 +18,11 @@ const bodyShadowEffect = 'blur'
 //         modal.classList.remove(modalActive)
 //         BODY.classList.remove(bodyShadowEffect)
 //
-//         if (gamer1Name.value !== '') {
-//             gamer1Place.textContent = gamer1Name.value
+//         if (gamerName.value !== '') {
+//             gamerPlace.textContent = gamerName.value
 //         }
 //
-//         if (gamer2Name.value !== '') {
-//             gamer2Place.textContent = gamer2Name.value
-//         }
+//
 //     }
 // }
 //
@@ -35,7 +31,7 @@ const bodyShadowEffect = 'blur'
 //     BODY.classList.add(bodyShadowEffect)
 // }
 
-let Game = new TicTacToo(grille, scorePlayer1, scorePlayer2)
+let Game = new SingleTicTaaToo(grille, scorePlayer1, scorePlayer2)
 Game.setGame(circle, croix);
 button.addEventListener('click', () => Game.initialisation())
 // startButton.addEventListener('click', () => removeModal())

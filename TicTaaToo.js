@@ -157,6 +157,7 @@ class TicTacToo
 
     Animation (boolean, el)
     {
+        //console.log(el)
         this.addAnimation(this.grille, el)
         setTimeout( () => {
             this.removeAnimation(this.grille, el)
