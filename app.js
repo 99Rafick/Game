@@ -15,27 +15,27 @@ const modalActive = 'appear'
 const bodyShadowEffect = 'blur'
 
 
-// const removeModal = () => {
-//     if(modal.classList.contains(modalActive)){
-//         modal.classList.remove(modalActive)
-//         BODY.classList.remove(bodyShadowEffect)
-//
-//         if (gamer1Name.value !== '') {
-//             gamer1Place.textContent = gamer1Name.value
-//         }
-//
-//         if (gamer2Name.value !== '') {
-//             gamer2Place.textContent = gamer2Name.value
-//         }
-//     }
-// }
-//
-// window.onload = () => {
-//     modal.classList.add(modalActive);
-//     BODY.classList.add(bodyShadowEffect)
-// }
+const removeModal = () => {
+    if(modal.classList.contains(modalActive)){
+        modal.classList.remove(modalActive)
+        BODY.classList.remove(bodyShadowEffect)
+
+        if (gamer1Name.value !== '') {
+            gamer1Place.textContent = gamer1Name.value
+        }
+
+        if (gamer2Name.value !== '') {
+            gamer2Place.textContent = gamer2Name.value
+        }
+    }
+}
+
+window.onload = () => {
+    modal.classList.add(modalActive);
+    BODY.classList.add(bodyShadowEffect)
+}
 
 let Game = new TicTacToo(grille, scorePlayer1, scorePlayer2)
 Game.setGame(circle, croix);
 button.addEventListener('click', () => Game.initialisation())
-// startButton.addEventListener('click', () => removeModal())
+startButton.addEventListener('click', () => removeModal())
